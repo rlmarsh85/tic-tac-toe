@@ -10,7 +10,7 @@ function Square(props){
     );
 }
   
-  class Board extends React.Component {
+  class Board extends React.Component {  
 
     renderSquare(i) {
       return (
@@ -97,9 +97,10 @@ function Square(props){
       })
 
       
-
       if (winner) {      
-          status = 'Winner: ' + winner;    
+          status = 'Winner: ' + winner;
+      }else if(history.length == 10){
+          status = 'Game is a draw!';   
       } else {      
           status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');    
       }
